@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Desk | Reports</title>
+    <link rel="stylesheet" href="css/reports.css">
+</head>
+<body>
+<div class="app">
+    <aside class="sidebar" id="sidebar">
+        <div class="brand"><div class="logo">SD</div><div><strong>Service Desk</strong><span>Management Portal</span></div></div>
+        <nav>
+            <div class="nav-label">MAIN</div>
+            <a href="dashboard.html" class="nav-item"><span>▦</span>Dashboard</a>
+            <div class="nav-label">SERVICE MANAGEMENT</div>
+            <a href="incidents.html" class="nav-item"><span>⚠</span>Incidents</a>
+            <a href="service-requests.html" class="nav-item"><span>▣</span>Service Requests</a>
+            <a href="problems.html" class="nav-item"><span>◉</span>Problems</a>
+            <a href="changes.html" class="nav-item"><span>⇄</span>Changes</a>
+            <div class="nav-label">RESOURCES</div>
+            <a href="knowledge-base.html" class="nav-item"><span>▤</span>Knowledge Base</a>
+            <a href="users.html" class="nav-item"><span>◌</span>Users</a>
+            <a href="reports.html" class="nav-item active"><span>▥</span>Reports</a>
+        </nav>
+        <div class="sidebar-bottom">
+            <a href="settings.html" class="nav-item"><span>⚙</span>Settings</a>
+            <button id="logoutBtn"><span>↪</span>Logout</button>
+        </div>
+    </aside>
+    <main class="main">
+        <header class="header">
+            <div class="header-left">
+                <button class="mobile-menu" id="mobileMenu">☰</button>
+                <div><h1>Reports</h1><p>Service desk analytics and insights</p></div>
+            </div>
+            <div class="header-right">
+                <button class="notification">🔔<i></i></button>
+                <div class="profile"><div class="avatar">A</div><div><strong id="profileName">Admin</strong><span>Administrator</span></div></div>
+            </div>
+        </header>
+        <div class="content">
+            <div class="page-header">
+                <div><h2>Incident Reports</h2><p>Real-time analytics based on incident data</p></div>
+            </div>
+
+            <!-- STAT CARDS -->
+            <section class="stats">
+                <div class="stat-card"><div class="stat-info"><span class="stat-label">Total Incidents</span><strong id="statTotal">0</strong></div><div class="stat-icon blue">⚠</div></div>
+                <div class="stat-card"><div class="stat-info"><span class="stat-label">Open Incidents</span><strong id="statOpen">0</strong></div><div class="stat-icon orange">◔</div></div>
+                <div class="stat-card"><div class="stat-info"><span class="stat-label">In Progress</span><strong id="statProgress">0</strong></div><div class="stat-icon yellow">●</div></div>
+                <div class="stat-card"><div class="stat-info"><span class="stat-label">Resolved</span><strong id="statResolved">0</strong></div><div class="stat-icon green">✓</div></div>
+                <div class="stat-card"><div class="stat-info"><span class="stat-label">Critical</span><strong id="statCritical">0</strong></div><div class="stat-icon red">!</div></div>
+            </section>
+
+            <!-- CHARTS -->
+            <section class="charts-grid">
+                <div class="chart-panel">
+                    <div class="chart-header"><h3>Status Distribution</h3></div>
+                    <div class="chart-body" id="statusChart"></div>
+                </div>
+                <div class="chart-panel">
+                    <div class="chart-header"><h3>Priority Distribution</h3></div>
+                    <div class="chart-body" id="priorityChart"></div>
+                </div>
+                <div class="chart-panel">
+                    <div class="chart-header"><h3>Category Distribution</h3></div>
+                    <div class="chart-body" id="categoryChart"></div>
+                </div>
+                <div class="chart-panel">
+                    <div class="chart-header"><h3>Recent Activity</h3></div>
+                    <div class="chart-body" id="recentActivity"></div>
+                </div>
+            </section>
+        </div>
+    </main>
+</div>
+
+<script src="js/reports.js"></script>
+</body>
+</html>

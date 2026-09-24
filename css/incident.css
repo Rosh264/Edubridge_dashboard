@@ -1,0 +1,710 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+    --text: #313b43;
+    --muted: #68757e;
+    --border: #c9ced3;
+    --border-light: #dfe3e6;
+    --primary: #176fae;
+    --background: #f5f7f8;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 13px;
+
+    color: var(--text);
+
+    background: #e9edf0;
+}
+
+
+.app {
+    min-height: 100vh;
+
+    background: white;
+}
+
+
+/* =========================
+   TOP BAR
+========================= */
+
+.topbar {
+    height: 58px;
+
+    padding: 0 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background: #f8f9fa;
+
+    border-bottom: 1px solid #b9c0c5;
+}
+
+
+.top-left {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.back-btn,
+.menu-btn {
+    border: none;
+
+    background: transparent;
+
+    color: #45515a;
+
+    cursor: pointer;
+}
+
+
+.back-btn {
+    font-size: 27px;
+}
+
+
+.menu-btn {
+    font-size: 18px;
+}
+
+
+.page-title {
+    margin-left: 4px;
+
+    color: #3d4850;
+}
+
+
+.pin {
+    color: #6d7b84;
+}
+
+
+.top-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.top-actions > button:not(.action-btn) {
+    border: none;
+
+    background: transparent;
+
+    color: #45515a;
+
+    font-size: 15px;
+
+    cursor: pointer;
+}
+
+
+.action-btn {
+    padding: 7px 12px;
+
+    border: 1px solid #c2c8cd;
+
+    border-radius: 3px;
+
+    background: white;
+
+    color: #3c464e;
+
+    cursor: pointer;
+}
+
+
+.action-btn:hover {
+    background: #eef4f7;
+}
+
+
+.action-btn.delete {
+    color: #a63838;
+}
+
+
+/* =========================
+   PAGE
+========================= */
+
+.page {
+    width: min(
+        1110px,
+        calc(100% - 42px)
+    );
+
+    margin: 24px auto 50px;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.form-section {
+    padding: 3px 20px 34px;
+
+    border-bottom: 1px solid #cfd4d7;
+}
+
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    column-gap: 72px;
+
+    row-gap: 11px;
+}
+
+
+.field {
+    min-width: 0;
+
+    display: grid;
+
+    grid-template-columns:
+        135px
+        minmax(0, 1fr);
+
+    align-items: center;
+
+    gap: 9px;
+}
+
+
+.field label {
+    text-align: right;
+
+    color: #39434a;
+
+    font-size: 12px;
+}
+
+
+input,
+select,
+textarea {
+    width: 100%;
+
+    border: 1px solid var(--border);
+
+    border-radius: 2px;
+
+    background: white;
+
+    color: #303a42;
+
+    outline: none;
+}
+
+
+input,
+select {
+    height: 31px;
+
+    padding: 5px 9px;
+}
+
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #5b9ac5;
+
+    box-shadow:
+        0 0 0 2px
+        rgba(35,123,181,.10);
+}
+
+
+/* ICON INPUT */
+
+.input-icon {
+    display: flex;
+
+    min-width: 0;
+}
+
+
+.input-icon input {
+    border-radius:
+        2px 0 0 2px;
+}
+
+
+.input-icon span {
+    width: 32px;
+
+    height: 31px;
+
+    flex-shrink: 0;
+
+    display: grid;
+
+    place-items: center;
+
+    border: 1px solid var(--border);
+
+    border-left: none;
+
+    background: #f5f7f8;
+
+    color: #6e7a81;
+}
+
+
+/* DESCRIPTION */
+
+.full {
+    grid-column: 1 / -1;
+}
+
+
+.description-box {
+    display: flex;
+
+    gap: 7px;
+}
+
+
+.description-box button {
+    width: 35px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 2px;
+
+    background: #f8fafb;
+
+    cursor: pointer;
+}
+
+
+/* RELATED */
+
+.related-btn {
+    display: block;
+
+    margin: 15px auto -4px;
+
+    padding: 7px 13px;
+
+    border: 1px solid #ccd2d6;
+
+    border-radius: 3px;
+
+    background: white;
+
+    color: #414b52;
+
+    cursor: pointer;
+}
+
+
+.related-btn:hover {
+    background: #f5f8fa;
+}
+
+
+.related-btn span {
+    font-size: 18px;
+}
+
+
+/* =========================
+   NOTES
+========================= */
+
+.notes-section {
+    margin-top: 15px;
+
+    border-bottom: 1px solid #cfd4d7;
+}
+
+
+.section-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 8px 8px;
+}
+
+
+.section-header h2 {
+    font-size: 17px;
+
+    font-weight: 500;
+}
+
+
+.collapse-btn {
+    border: none;
+
+    background: transparent;
+
+    color: #67737b;
+
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+
+/* NOTES HEAD */
+
+.notes-head {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 72px;
+
+    margin: 7px 20px 2px;
+}
+
+
+.notes-head > div {
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+}
+
+
+.notes-head span {
+    margin-right: auto;
+
+    color: #3e484f;
+}
+
+
+.notes-head button {
+    width: 27px;
+
+    height: 26px;
+
+    border: 1px solid #c9ced2;
+
+    border-radius: 2px;
+
+    background: white;
+
+    color: #56636b;
+
+    cursor: pointer;
+}
+
+
+/* NOTES GRID */
+
+.notes-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    column-gap: 72px;
+
+    row-gap: 7px;
+
+    padding: 0 20px;
+}
+
+
+.note-field {
+    display: grid;
+
+    grid-template-columns:
+        135px
+        minmax(0, 1fr);
+
+    align-items: start;
+
+    gap: 9px;
+}
+
+
+.note-field label {
+    text-align: right;
+
+    color: #39434a;
+
+    font-size: 12px;
+}
+
+
+textarea {
+    min-height: 58px;
+
+    padding: 7px;
+
+    resize: vertical;
+}
+
+
+.note-field:last-of-type textarea {
+    background: #fff8a9;
+
+    border-color: #ddd88a;
+}
+
+
+/* =========================
+   ACTIVITY
+========================= */
+
+.activity-header {
+    margin-top: 13px;
+
+    padding: 7px 20px;
+
+    border-top: 1px solid #d8dde0;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+
+.activity-header div {
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+}
+
+
+.activity-header button {
+    width: 27px;
+
+    height: 25px;
+
+    border: 1px solid #c7cdd1;
+
+    background: white;
+
+    cursor: pointer;
+}
+
+
+.activity-item {
+    margin: 0 20px 20px;
+
+    background: #f3f5f6;
+
+    border: 1px solid #e0e3e5;
+}
+
+
+.activity-meta {
+    padding: 9px 13px 5px;
+
+    display: flex;
+
+    align-items: baseline;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    font-size: 11px;
+}
+
+
+.activity-meta strong {
+    font-size: 12px;
+}
+
+
+.system {
+    color: #1680bf;
+
+    font-weight: 600;
+}
+
+
+.activity-sub {
+    padding: 0 13px 8px;
+
+    font-size: 12px;
+}
+
+
+.activity-sub em {
+    color: #7d898f;
+}
+
+
+.activity-message {
+    padding: 9px 13px;
+
+    border-top: 1px solid #e2e5e7;
+
+    background: #eef1f2;
+
+    color: #006cae;
+
+    font-weight: 600;
+}
+
+
+/* =========================
+   TOAST
+========================= */
+
+.toast {
+    position: fixed;
+
+    right: 24px;
+
+    bottom: 24px;
+
+    padding: 11px 16px;
+
+    background: #26343d;
+
+    color: white;
+
+    border-radius: 4px;
+
+    box-shadow:
+        0 5px 20px
+        rgba(0,0,0,.2);
+
+    opacity: 0;
+
+    transform: translateY(15px);
+
+    pointer-events: none;
+
+    transition: .25s;
+}
+
+
+.toast.show {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width: 850px) {
+
+    .topbar {
+        height: auto;
+
+        min-height: 58px;
+
+        padding: 9px 12px;
+
+        flex-wrap: wrap;
+
+        gap: 8px;
+    }
+
+
+    .top-actions {
+        width: 100%;
+
+        justify-content: flex-end;
+
+        flex-wrap: wrap;
+    }
+
+
+    .page {
+        width: calc(100% - 20px);
+
+        margin-top: 12px;
+    }
+
+
+    .form-grid,
+    .notes-grid,
+    .notes-head {
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+    }
+
+
+    .full {
+        grid-column: auto;
+    }
+
+
+    .notes-grid {
+        padding: 0;
+    }
+
+
+    .notes-head {
+        margin: 10px 0;
+    }
+
+}
+
+
+@media(max-width: 520px) {
+
+    .field,
+    .note-field {
+        grid-template-columns: 1fr;
+
+        gap: 4px;
+    }
+
+
+    .field label,
+    .note-field label {
+        text-align: left;
+    }
+
+
+    .form-section {
+        padding-left: 4px;
+
+        padding-right: 4px;
+    }
+
+
+    .activity-item {
+        margin-left: 4px;
+
+        margin-right: 4px;
+    }
+
+}

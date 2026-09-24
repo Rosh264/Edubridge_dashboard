@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Incident</title>
+
+    <link rel="stylesheet" href="css/create-incident.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- =========================
+         TOP BAR
+    ========================== -->
+
+    <header class="topbar">
+
+        <div class="top-left">
+
+            <button
+                class="back-btn"
+                id="backBtn"
+                title="Back"
+            >
+                ‹
+            </button>
+
+            <button
+                class="menu-btn"
+                title="Menu"
+            >
+                ☰
+            </button>
+
+            <span class="page-title">
+                Create Incident
+            </span>
+
+        </div>
+
+
+        <div class="top-actions">
+
+            <button
+                class="icon-btn"
+                title="Attachment"
+            >
+                📎
+            </button>
+
+            <button
+                class="icon-btn"
+                title="Help"
+            >
+                ?
+            </button>
+
+            <button
+                class="icon-btn"
+                title="Email"
+            >
+                ✉
+            </button>
+
+            <button
+                class="icon-btn"
+                title="Share"
+            >
+                ↗
+            </button>
+
+            <button
+                class="icon-btn"
+                title="Settings"
+            >
+                ⚙
+            </button>
+
+            <button
+                class="normal-btn"
+                id="submitTopBtn"
+            >
+                Create
+            </button>
+
+            <button
+                class="normal-btn"
+                id="cancelTopBtn"
+            >
+                Cancel
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <main class="page">
+
+        <form id="incidentForm">
+
+            <!-- =========================
+                 INCIDENT INFORMATION
+            ========================== -->
+
+            <section class="form-section">
+
+                <div class="form-grid">
+
+                    <!-- NUMBER -->
+
+                    <div class="field">
+
+                        <label>
+                            Number
+                        </label>
+
+                        <input
+                            id="number"
+                            value="Automatically generated"
+                            readonly
+                            class="readonly"
+                        >
+
+                    </div>
+
+
+                    <!-- OPENED -->
+
+                    <div class="field">
+
+                        <label>
+                            Opened
+                        </label>
+
+                        <div class="input-icon">
+
+                            <input
+                                id="opened"
+                                readonly
+                            >
+
+                            <span>▣</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- CALLER -->
+
+                    <div class="field">
+
+                        <label>
+                            Caller
+                            <span>*</span>
+                        </label>
+
+                        <div class="input-icon">
+
+                            <input
+                                id="caller"
+                                type="text"
+                                placeholder="Enter caller name"
+                                required
+                            >
+
+                            <span>⌕</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- OPENED BY -->
+
+                    <div class="field">
+
+                        <label>
+                            Opened by
+                        </label>
+
+                        <div class="input-icon">
+
+                            <input
+                                id="openedBy"
+                                readonly
+                            >
+
+                            <span>⌕</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- LOCATION -->
+
+                    <div class="field">
+
+                        <label>
+                            Location
+                        </label>
+
+                        <div class="input-icon">
+
+                            <input
+                                id="location"
+                                type="text"
+                                placeholder="Enter location"
+                            >
+
+                            <span>⌕</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- CONTACT TYPE -->
+
+                    <div class="field">
+
+                        <label>
+                            Contact type
+                        </label>
+
+                        <select id="contactType">
+
+                            <option>Phone</option>
+                            <option>Email</option>
+                            <option>Self-service</option>
+                            <option>Walk-in</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- CATEGORY -->
+
+                    <div class="field">
+
+                        <label>
+                            Category
+                            <span>*</span>
+                        </label>
+
+                        <select
+                            id="category"
+                            required
+                        >
+
+                            <option value="">
+                                -- Select --
+                            </option>
+
+                            <option>
+                                Hardware
+                            </option>
+
+                            <option>
+                                Software
+                            </option>
+
+                            <option>
+                                Network
+                            </option>
+
+                            <option>
+                                Database
+                            </option>
+
+                            <option>
+                                Application
+                            </option>
+
+                            <option>
+                                EM Incident
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- STATE -->
+
+                    <div class="field">
+
+                        <label>
+                            State
+                        </label>
+
+                        <select id="state">
+
+                            <option value="New">
+                                New
+                            </option>
+
+                            <option value="Open">
+                                Open
+                            </option>
+
+                            <option value="In Progress">
+                                In Progress
+                            </option>
+
+                            <option value="On Hold">
+                                On Hold
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- SUBCATEGORY -->
+
+                    <div class="field">
+
+                        <label>
+                            Subcategory
+                        </label>
+
+                        <select id="subcategory">
+
+                            <option>
+                                -- None --
+                            </option>
+
+                            <option>
+                                CPU
+                            </option>
+
+                            <option>
+                                Memory
+                            </option>
+
+                            <option>
+                                Disk
+                            </option>
+
+                            <option>
+                                Connectivity
+                            </option>
+
+                            <option>
+                                Login
+                            </option>
+
+                            <option>
+                                Email
+                            </option>
+
+                            <option>
+                                Application
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- ASSIGNMENT GROUP -->
+
+                    <div class="field">
+
+                        <label>
+                            Assignment group
+                        </label>
+
+                        <div class="input-icon">
+
+                            <input
+                                id="assignmentGroup"
+                                value="Service Desk"
+                            >
+
+                            <span>⌕</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- CONFIGURATION ITEM -->
+
+                    <div class="field">
+
+                        <label>
+                            Configuration item
+                        </label>
+
+                        <div class="input-icon">
+
+                            <input
+                                id="configurationItem"
+                                placeholder=""
+                            >
+
+                            <span>⌕</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ASSIGNED TO -->
+
+                    <div class="field">
+
+                        <label>
+                            Assigned to
+                        </label>
+
+                        <div class="input-icon">
+
+                            <input
+                                id="assignedTo"
+                            >
+
+                            <span>⌕</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- IMPACT -->
+
+                    <div class="field">
+
+                        <label>
+                            Impact
+                        </label>
+
+                        <select id="impact">
+
+                            <option value="1">
+                                1 - High
+                            </option>
+
+                            <option
+                                value="2"
+                                selected
+                            >
+                                2 - Medium
+                            </option>
+
+                            <option value="3">
+                                3 - Low
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div></div>
+
+
+                    <!-- URGENCY -->
+
+                    <div class="field">
+
+                        <label>
+                            Urgency
+                        </label>
+
+                        <select id="urgency">
+
+                            <option value="1">
+                                1 - High
+                            </option>
+
+                            <option
+                                value="2"
+                                selected
+                            >
+                                2 - Medium
+                            </option>
+
+                            <option value="3">
+                                3 - Low
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div></div>
+
+
+                    <!-- PRIORITY -->
+
+                    <div class="field">
+
+                        <label>
+                            Priority
+                        </label>
+
+                        <select id="priority">
+
+                            <option value="critical">
+                                1 - Critical
+                            </option>
+
+                            <option
+                                value="high"
+                                selected
+                            >
+                                2 - High
+                            </option>
+
+                            <option value="medium">
+                                3 - Moderate
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div></div>
+
+
+                    <!-- SHORT DESCRIPTION -->
+
+                    <div class="field full">
+
+                        <label>
+                            Short description
+                            <span>*</span>
+                        </label>
+
+                        <div class="description-box">
+
+                            <input
+                                id="shortDescription"
+                                type="text"
+                                placeholder="Briefly describe the incident"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                title="Description helper"
+                            >
+                                ♧
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RELATED SEARCH -->
+
+                <button
+                    type="button"
+                    class="related-btn"
+                    id="relatedBtn"
+                >
+
+                    Related Search Results
+
+                    <span>›</span>
+
+                </button>
+
+            </section>
+
+
+            <!-- =========================
+                 NOTES
+            ========================== -->
+
+            <section class="notes-section">
+
+                <div class="section-header">
+
+                    <h2>
+                        Notes
+                    </h2>
+
+                    <button
+                        type="button"
+                        id="collapseBtn"
+                        class="collapse-btn"
+                    >
+                        ⌄
+                    </button>
+
+                </div>
+
+
+                <div id="notesContent">
+
+                    <!-- WATCH LIST -->
+
+                    <div class="notes-head">
+
+                        <div>
+
+                            <span>
+                                Watch list
+                            </span>
+
+                            <button
+                                type="button"
+                                title="Add watcher"
+                            >
+                                ♙
+                            </button>
+
+                            <button
+                                type="button"
+                                title="Manage watchers"
+                            >
+                                ♧
+                            </button>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Work notes list
+                            </span>
+
+                            <button
+                                type="button"
+                                title="Add user"
+                            >
+                                ♙
+                            </button>
+
+                            <button
+                                type="button"
+                                title="Manage list"
+                            >
+                                ♧
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- NOTES -->
+
+                    <div class="notes-grid">
+
+                        <div class="note-field">
+
+                            <label>
+                                Additional comments
+                                (Customer visible)
+                            </label>
+
+                            <textarea
+                                id="comments"
+                                placeholder=""
+                            ></textarea>
+
+                        </div>
+
+
+                        <div></div>
+
+
+                        <div class="note-field">
+
+                            <label>
+                                Work notes
+                            </label>
+
+                            <textarea
+                                id="workNotes"
+                                placeholder=""
+                            ></textarea>
+
+                        </div>
+
+
+                        <div></div>
+
+                    </div>
+
+
+                    <!-- ACTIVITY -->
+
+                    <div class="activity-header">
+
+                        <div>
+
+                            <button
+                                type="button"
+                                id="activityToggle"
+                            >
+                                −
+                            </button>
+
+                            <strong>
+                                Activity
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <button type="button">
+                                −
+                            </button>
+
+                            <button type="button">
+                                ▽
+                            </button>
+
+                            <button type="button">
+                                ⌄
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="activity-item"
+                        id="activityItem"
+                    >
+
+                        <div class="activity-meta">
+
+                            <strong id="activityTime">
+                                -
+                            </strong>
+
+                            <span
+                                class="system"
+                                id="activityUser"
+                            >
+                                -
+                            </span>
+
+                            <span>
+                                Incident creation
+                            </span>
+
+                        </div>
+
+
+                        <div class="activity-sub">
+
+                            Assigned to:
+
+                            <em>
+                                (Empty)
+                            </em>
+
+                        </div>
+
+
+                        <div
+                            class="activity-message"
+                            id="activityMessage"
+                        >
+                            New incident will appear here after creation.
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 BOTTOM ACTIONS
+            ========================== -->
+
+            <div class="bottom-actions">
+
+                <button
+                    type="button"
+                    class="normal-btn"
+                    id="cancelBottomBtn"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="primary-btn"
+                >
+                    Create Incident
+                </button>
+
+            </div>
+
+        </form>
+
+    </main>
+
+</div>
+
+
+<!-- TOAST -->
+
+<div
+    id="toast"
+    class="toast"
+></div>
+
+
+<script src="js/create-incident.js"></script>
+
+</body>
+</html>

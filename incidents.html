@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Desk | Incidents</title>
+    <link rel="stylesheet" href="css/incidents.css">
+</head>
+<body>
+
+<div class="app">
+
+    <aside class="sidebar" id="sidebar">
+        <div class="brand">
+            <div class="logo">SD</div>
+            <div>
+                <strong>Service Desk</strong>
+                <span>Management Portal</span>
+            </div>
+        </div>
+
+        <nav>
+            <div class="nav-label">MAIN</div>
+            <a href="dashboard.html" class="nav-item"><span>▦</span>Dashboard</a>
+
+            <div class="nav-label">SERVICE MANAGEMENT</div>
+            <a href="incidents.html" class="nav-item active"><span>⚠</span>Incidents</a>
+            <a href="service-requests.html" class="nav-item"><span>▣</span>Service Requests</a>
+            <a href="problems.html" class="nav-item"><span>◉</span>Problems</a>
+            <a href="changes.html" class="nav-item"><span>⇄</span>Changes</a>
+
+            <div class="nav-label">RESOURCES</div>
+            <a href="knowledge-base.html" class="nav-item"><span>▤</span>Knowledge Base</a>
+            <a href="users.html" class="nav-item"><span>◌</span>Users</a>
+            <a href="reports.html" class="nav-item"><span>▥</span>Reports</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="settings.html" class="nav-item"><span>⚙</span>Settings</a>
+            <button id="logoutBtn"><span>↪</span>Logout</button>
+        </div>
+    </aside>
+
+    <main class="main">
+        <header class="header">
+            <div class="header-left">
+                <button class="mobile-menu" id="mobileMenu">☰</button>
+                <div>
+                    <h1>Incidents</h1>
+                    <p>Manage and track service desk incidents</p>
+                </div>
+            </div>
+            <div class="header-right">
+                <button class="notification">🔔<i></i></button>
+                <div class="profile">
+                    <div class="avatar">A</div>
+                    <div>
+                        <strong id="profileName">Admin</strong>
+                        <span>Administrator</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="content">
+            <div class="page-header">
+                <div>
+                    <h2>All Incidents</h2>
+                    <p><span id="totalCount">0</span> incidents found</p>
+                </div>
+                <button class="create-btn" id="createBtn">
+                    <span>+</span>Create Incident
+                </button>
+            </div>
+
+            <section class="filter-bar">
+                <div class="search">
+                    <span>⌕</span>
+                    <input type="text" id="searchInput" placeholder="Search incidents...">
+                </div>
+                <select id="statusFilter">
+                    <option value="all">All Status</option>
+                    <option value="active">Active</option>
+                    <option value="progress">In Progress</option>
+                    <option value="resolved">Resolved</option>
+                </select>
+                <select id="priorityFilter">
+                    <option value="all">All Priority</option>
+                    <option value="critical">Critical</option>
+                    <option value="high">High</option>
+                    <option value="medium">Medium</option>
+                </select>
+                <button class="filter-btn" id="clearFilters">Clear</button>
+            </section>
+
+            <section class="table-panel">
+                <div class="table-top">
+                    <span>Showing <strong id="resultCount">0</strong> incidents</span>
+                    <div class="table-actions">
+                        <button>⇅ Sort</button>
+                        <button>⚙ Columns</button>
+                    </div>
+                </div>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox" id="selectAll"></th>
+                                <th>Number</th>
+                                <th>Short Description</th>
+                                <th>Caller</th>
+                                <th>Priority</th>
+                                <th>Status</th>
+                                <th>Updated</th>
+                            </tr>
+                        </thead>
+                        <tbody id="incidentTable"></tbody>
+                    </table>
+                </div>
+
+                <div class="pagination" id="pagination"></div>
+            </section>
+        </div>
+    </main>
+</div>
+
+<script src="js/incidents.js"></script>
+</body>
+</html>

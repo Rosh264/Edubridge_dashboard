@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Service Desk | Dashboard</title>
+
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-logo">
+
+            <div class="logo-box">
+                SD
+            </div>
+
+            <div class="logo-text">
+                <strong>Service Desk</strong>
+                <span>Management Portal</span>
+            </div>
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="navigation">
+
+            <div class="nav-section">
+                MAIN
+            </div>
+
+            <a href="#" class="nav-item active">
+
+                <span class="nav-icon">▦</span>
+
+                <span>Dashboard</span>
+
+            </a>
+
+
+            <div class="nav-section">
+                SERVICE MANAGEMENT
+            </div>
+
+
+            <a href="incidents.html" class="nav-item">
+
+                <span class="nav-icon">⚠</span>
+
+                <span>Incidents</span>
+
+                <span class="nav-count" id="incCount">
+                    0
+                </span>
+
+            </a>
+
+
+            <a href="service-requests.html" class="nav-item">
+
+                <span class="nav-icon">▣</span>
+
+                <span>Service Requests</span>
+
+            </a>
+
+
+            <a href="problems.html" class="nav-item">
+
+                <span class="nav-icon">◉</span>
+
+                <span>Problems</span>
+
+            </a>
+
+
+            <a href="changes.html" class="nav-item">
+
+                <span class="nav-icon">⇄</span>
+
+                <span>Changes</span>
+
+            </a>
+
+
+            <div class="nav-section">
+                RESOURCES
+            </div>
+
+
+            <a href="knowledge-base.html" class="nav-item">
+
+                <span class="nav-icon">▤</span>
+
+                <span>Knowledge Base</span>
+
+            </a>
+
+
+            <a href="users.html" class="nav-item">
+
+                <span class="nav-icon">◌</span>
+
+                <span>Users</span>
+
+            </a>
+
+
+            <a href="reports.html" class="nav-item">
+
+                <span class="nav-icon">▥</span>
+
+                <span>Reports</span>
+
+            </a>
+
+        </nav>
+
+
+        <!-- SIDEBAR BOTTOM -->
+
+        <div class="sidebar-bottom">
+
+            <a href="settings.html" class="nav-item">
+
+                <span class="nav-icon">⚙</span>
+
+                <span>Settings</span>
+
+            </a>
+
+            <button
+                class="logout-btn"
+                id="logoutBtn"
+            >
+
+                <span>↪</span>
+
+                <span>Logout</span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main-content">
+
+
+        <!-- TOP HEADER -->
+
+        <header class="header">
+
+            <div class="header-left">
+
+                <button
+                    class="mobile-menu"
+                    id="mobileMenu"
+                >
+                    ☰
+                </button>
+
+                <div>
+
+                    <h1>Dashboard</h1>
+
+                    <p>
+                        Welcome back, <strong id="userName">
+                        Admin
+                        </strong>
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="header-right">
+
+                <button class="header-icon">
+                    🔔
+                    <span class="notification-dot"></span>
+                </button>
+
+
+                <div class="profile">
+
+                    <div class="avatar">
+                        A
+                    </div>
+
+                    <div class="profile-info">
+
+                        <strong id="profileName">
+                            Admin
+                        </strong>
+
+                        <span>
+                            Administrator
+                        </span>
+
+                    </div>
+
+                    <span class="profile-arrow">
+                        ▾
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- CONTENT -->
+
+        <div class="content">
+
+
+            <!-- PAGE INTRO -->
+
+            <div class="page-intro">
+
+                <div>
+
+                    <h2>Service Overview</h2>
+
+                    <p>
+                        Monitor and manage your service desk operations.
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="create-btn"
+                    id="createIncident"
+                >
+
+                    <span>+</span>
+
+                    Create Incident
+
+                </button>
+
+            </div>
+
+
+            <!-- ================= STAT CARDS ================= -->
+
+            <section class="stats">
+
+
+                <div class="stat-card">
+
+                    <div class="stat-info">
+
+                        <span class="stat-label">
+                            Open Incidents
+                        </span>
+
+                        <strong>
+                            24
+                        </strong>
+
+                        <small class="positive">
+                            ↑ 8.2% from last week
+                        </small>
+
+                    </div>
+
+                    <div class="stat-icon blue">
+                        ⚠
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-info">
+
+                        <span class="stat-label">
+                            In Progress
+                        </span>
+
+                        <strong>
+                            12
+                        </strong>
+
+                        <small>
+                            5 assigned to you
+                        </small>
+
+                    </div>
+
+                    <div class="stat-icon orange">
+                        ◔
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-info">
+
+                        <span class="stat-label">
+                            Resolved Today
+                        </span>
+
+                        <strong>
+                            18
+                        </strong>
+
+                        <small class="positive">
+                            ↑ 12.5% from yesterday
+                        </small>
+
+                    </div>
+
+                    <div class="stat-icon green">
+                        ✓
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-info">
+
+                        <span class="stat-label">
+                            Critical Issues
+                        </span>
+
+                        <strong>
+                            3
+                        </strong>
+
+                        <small class="negative">
+                            Requires attention
+                        </small>
+
+                    </div>
+
+                    <div class="stat-icon red">
+                        !
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= LOWER GRID ================= -->
+
+            <section class="dashboard-grid">
+
+
+                <!-- RECENT INCIDENTS -->
+
+                <div class="panel incidents-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <h3>
+                                Recent Incidents
+                            </h3>
+
+                            <p>
+                                Latest service desk activity
+                            </p>
+
+                        </div>
+
+
+                        <a href="incidents.html">
+                            View all →
+                        </a>
+
+                    </div>
+
+
+                    <div class="incident-list">
+
+
+                        <div class="incident-row">
+
+                            <div class="incident-id">
+                                INC0011211
+                            </div>
+
+                            <div class="incident-description">
+
+                                <strong>
+                                    CPU Utilization threshold exceeded
+                                </strong>
+
+                                <span>
+                                    Enterprise Manager Connector
+                                </span>
+
+                            </div>
+
+                            <span class="priority high">
+                                High
+                            </span>
+
+                            <span class="status active">
+                                Active
+                            </span>
+
+                        </div>
+
+
+                        <div class="incident-row">
+
+                            <div class="incident-id">
+                                INC0011210
+                            </div>
+
+                            <div class="incident-description">
+
+                                <strong>
+                                    Network connectivity issue
+                                </strong>
+
+                                <span>
+                                    Bangalore Office
+                                </span>
+
+                            </div>
+
+                            <span class="priority critical">
+                                Critical
+                            </span>
+
+                            <span class="status progress">
+                                In Progress
+                            </span>
+
+                        </div>
+
+
+                        <div class="incident-row">
+
+                            <div class="incident-id">
+                                INC0011209
+                            </div>
+
+                            <div class="incident-description">
+
+                                <strong>
+                                    Email service unavailable
+                                </strong>
+
+                                <span>
+                                    Microsoft Exchange
+                                </span>
+
+                            </div>
+
+                            <span class="priority medium">
+                                Medium
+                            </span>
+
+                            <span class="status resolved">
+                                Resolved
+                            </span>
+
+                        </div>
+
+
+                        <div class="incident-row">
+
+                            <div class="incident-id">
+                                INC0011208
+                            </div>
+
+                            <div class="incident-description">
+
+                                <strong>
+                                    Application login failure
+                                </strong>
+
+                                <span>
+                                    Internal Applications
+                                </span>
+
+                            </div>
+
+                            <span class="priority medium">
+                                Medium
+                            </span>
+
+                            <span class="status active">
+                                Active
+                            </span>
+
+                        </div>
+
+
+                        <div class="incident-row">
+
+                            <div class="incident-id">
+                                INC0011207
+                            </div>
+
+                            <div class="incident-description">
+
+                                <strong>
+                                    Database performance warning
+                                </strong>
+
+                                <span>
+                                    Production Database
+                                </span>
+
+                            </div>
+
+                            <span class="priority high">
+                                High
+                            </span>
+
+                            <span class="status progress">
+                                In Progress
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <!-- RIGHT COLUMN -->
+
+                <div class="right-column">
+
+
+                    <!-- QUICK ACTIONS -->
+
+                    <div class="panel quick-panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <h3>
+                                    Quick Actions
+                                </h3>
+
+                                <p>
+                                    Frequently used actions
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="quick-actions">
+
+                            <button
+                                onclick="window.location.href='incidents.html'"
+                            >
+
+                                <span class="quick-icon blue">
+                                    ⚠
+                                </span>
+
+                                <span>
+                                    <strong>
+                                        View Incidents
+                                    </strong>
+
+                                    <small>
+                                        Manage active incidents
+                                    </small>
+                                </span>
+
+                                <b>›</b>
+
+                            </button>
+
+
+                            <button
+                                onclick="window.location.href='service-requests.html'"
+                            >
+
+                                <span class="quick-icon green">
+                                    +
+                                </span>
+
+                                <span>
+                                    <strong>
+                                        New Service Request
+                                    </strong>
+
+                                    <small>
+                                        Create a request
+                                    </small>
+                                </span>
+
+                                <b>›</b>
+
+                            </button>
+
+
+                            <button
+                                onclick="window.location.href='knowledge-base.html'"
+                            >
+
+                                <span class="quick-icon purple">
+                                    ▤
+                                </span>
+
+                                <span>
+                                    <strong>
+                                        Knowledge Base
+                                    </strong>
+
+                                    <small>
+                                        Search solutions
+                                    </small>
+                                </span>
+
+                                <b>›</b>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- SYSTEM STATUS -->
+
+                    <div class="panel system-panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <h3>
+                                    System Status
+                                </h3>
+
+                            </div>
+
+                            <span class="operational">
+                                ● Operational
+                            </span>
+
+                        </div>
+
+
+                        <div class="system-item">
+
+                            <span>
+                                Service Desk
+                            </span>
+
+                            <span class="status-dot">
+                                ●
+                            </span>
+
+                        </div>
+
+
+                        <div class="system-item">
+
+                            <span>
+                                Incident Management
+                            </span>
+
+                            <span class="status-dot">
+                                ●
+                            </span>
+
+                        </div>
+
+
+                        <div class="system-item">
+
+                            <span>
+                                Notification Service
+                            </span>
+
+                            <span class="status-dot">
+                                ●
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<script src="js/dashboard.js"></script>
+
+</body>
+</html>

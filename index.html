@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Desk | Login</title>
+
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+
+    <div class="login-page">
+
+        <!-- LEFT BRAND SECTION -->
+        <section class="brand-section">
+
+            <div class="brand-content">
+
+                <div class="brand-logo">
+                    SD
+                </div>
+
+                <h1>Service Desk</h1>
+
+                <p>
+                    Manage incidents, service requests,
+                    users and support operations from one place.
+                </p>
+
+                <div class="brand-line"></div>
+
+                <span>
+                    Enterprise Service Management Platform
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- RIGHT LOGIN SECTION -->
+        <section class="login-section">
+
+            <div class="login-container">
+
+                <div class="mobile-logo">
+                    SD
+                </div>
+
+                <div class="login-header">
+
+                    <h2>Welcome back</h2>
+
+                    <p>
+                        Sign in to access your service desk
+                    </p>
+
+                </div>
+
+
+                <form id="loginForm">
+
+                    <!-- USERNAME -->
+
+                    <div class="form-group">
+
+                        <label for="username">
+                            Username
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <span class="input-icon">
+                                👤
+                            </span>
+
+                            <input
+                                type="text"
+                                id="username"
+                                placeholder="Enter your username"
+                                autocomplete="username"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PASSWORD -->
+
+                    <div class="form-group">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <span class="input-icon">
+                                🔒
+                            </span>
+
+                            <input
+                                type="password"
+                                id="password"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                id="togglePassword"
+                            >
+                                Show
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- OPTIONS -->
+
+                    <div class="login-options">
+
+                        <label class="remember">
+
+                            <input
+                                type="checkbox"
+                                id="remember"
+                            >
+
+                            <span>Remember me</span>
+
+                        </label>
+
+                        <a href="#" id="forgotPassword">
+                            Forgot password?
+                        </a>
+
+                    </div>
+
+
+                    <!-- ERROR -->
+
+                    <div
+                        class="error-message"
+                        id="errorMessage"
+                    >
+                    </div>
+
+
+                    <!-- LOGIN -->
+
+                    <button
+                        type="submit"
+                        class="login-button"
+                        id="loginButton"
+                    >
+                        <span id="buttonText">
+                            Sign In
+                        </span>
+
+                        <span
+                            class="loader"
+                            id="loader"
+                        ></span>
+                    </button>
+
+                </form>
+
+
+                <div class="login-footer">
+
+                    <span>
+                        © 2026 Service Desk
+                    </span>
+
+                    <span>
+                        Secure Access
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <script src="js/login.js"></script>
+
+</body>
+</html>

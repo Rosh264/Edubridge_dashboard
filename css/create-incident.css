@@ -1,0 +1,797 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    color: #343e46;
+    background: #e9edf0;
+}
+
+
+/* =========================================
+   APP
+========================================= */
+
+.app {
+    min-height: 100vh;
+    background: #ffffff;
+}
+
+
+/* =========================================
+   TOP BAR
+========================================= */
+
+.topbar {
+    height: 58px;
+
+    padding: 0 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #f7f8f9;
+
+    border-bottom: 1px solid #c2c8cc;
+}
+
+
+.top-left {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.back-btn,
+.menu-btn,
+.icon-btn {
+    border: none;
+    background: transparent;
+
+    color: #45515a;
+
+    cursor: pointer;
+}
+
+
+.back-btn {
+    width: 28px;
+    height: 32px;
+
+    font-size: 28px;
+    line-height: 28px;
+}
+
+
+.menu-btn {
+    font-size: 18px;
+}
+
+
+.page-title {
+    margin-left: 4px;
+
+    color: #303a42;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+.top-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+}
+
+
+.icon-btn {
+    width: 30px;
+    height: 30px;
+
+    font-size: 15px;
+}
+
+
+.icon-btn:hover {
+    background: #e9eef1;
+}
+
+
+.normal-btn {
+    height: 32px;
+
+    padding: 0 13px;
+
+    border: 1px solid #c5cbd0;
+    border-radius: 3px;
+
+    background: #ffffff;
+
+    color: #39434a;
+
+    cursor: pointer;
+}
+
+
+.normal-btn:hover {
+    background: #eef4f7;
+}
+
+
+/* =========================================
+   MAIN
+========================================= */
+
+.page {
+    width: min(1110px, calc(100% - 40px));
+
+    margin: 24px auto 50px;
+}
+
+
+/* =========================================
+   INCIDENT FORM
+========================================= */
+
+.form-section {
+    padding: 3px 20px 18px;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #cfd4d7;
+}
+
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    column-gap: 72px;
+    row-gap: 11px;
+}
+
+
+.field {
+    min-width: 0;
+
+    display: grid;
+
+    grid-template-columns: 135px 1fr;
+
+    align-items: center;
+
+    gap: 9px;
+}
+
+
+.field label {
+    text-align: right;
+
+    color: #39434a;
+
+    font-size: 12px;
+}
+
+
+.field label span {
+    color: #b63d3d;
+}
+
+
+input,
+select,
+textarea {
+    width: 100%;
+
+    border: 1px solid #c8ced3;
+    border-radius: 2px;
+
+    background: #ffffff;
+
+    color: #303a42;
+
+    outline: none;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 13px;
+}
+
+
+input,
+select {
+    height: 31px;
+
+    padding: 5px 9px;
+}
+
+
+textarea {
+    padding: 8px 9px;
+
+    min-height: 70px;
+
+    resize: vertical;
+}
+
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #5c9bc5;
+
+    box-shadow:
+        0 0 0 2px rgba(35, 123, 181, 0.10);
+}
+
+
+.readonly {
+    background: #f5f6f7;
+
+    color: #68747c;
+}
+
+
+/* =========================================
+   INPUT ICON
+========================================= */
+
+.input-icon {
+    display: flex;
+
+    min-width: 0;
+}
+
+
+.input-icon input {
+    border-radius: 2px 0 0 2px;
+}
+
+
+.input-icon span {
+    width: 32px;
+    height: 31px;
+
+    flex-shrink: 0;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid #c8ced3;
+
+    border-left: none;
+
+    background: #f4f6f7;
+
+    color: #6c7880;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   FULL WIDTH FIELD
+========================================= */
+
+.field.full {
+    grid-column: 1 / -1;
+
+    grid-template-columns: 135px 1fr;
+}
+
+
+/* =========================================
+   SHORT DESCRIPTION
+========================================= */
+
+.description-box {
+    display: flex;
+
+    gap: 7px;
+}
+
+
+.description-box input {
+    flex: 1;
+}
+
+
+.description-box button {
+    width: 35px;
+
+    flex-shrink: 0;
+
+    border: 1px solid #c8ced3;
+
+    background: #f8fafb;
+
+    border-radius: 2px;
+
+    color: #5f6b72;
+
+    cursor: pointer;
+}
+
+
+.description-box button:hover {
+    background: #eef3f5;
+}
+
+
+/* =========================================
+   RELATED
+========================================= */
+
+.related-btn {
+    display: block;
+
+    margin: 15px auto 0;
+
+    padding: 7px 13px;
+
+    border: 1px solid #ccd2d6;
+
+    background: #ffffff;
+
+    border-radius: 3px;
+
+    color: #4d5961;
+
+    cursor: pointer;
+}
+
+
+.related-btn span {
+    margin-left: 6px;
+
+    font-size: 15px;
+}
+
+
+.related-btn:hover {
+    background: #f4f7f8;
+}
+
+
+/* =========================================
+   NOTES
+========================================= */
+
+.notes-section {
+    margin-top: 18px;
+
+    background: #ffffff;
+
+    border-top: 1px solid #cfd4d7;
+}
+
+
+.section-header {
+    height: 42px;
+
+    padding: 0 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid #d4d9dc;
+}
+
+
+.section-header h2 {
+    margin: 0;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: #39434a;
+}
+
+
+.collapse-btn {
+    border: none;
+
+    background: transparent;
+
+    color: #56636b;
+
+    cursor: pointer;
+
+    font-size: 17px;
+}
+
+
+/* =========================================
+   NOTES HEADER
+========================================= */
+
+.notes-head {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    padding: 13px 20px 5px;
+
+    gap: 72px;
+}
+
+
+.notes-head > div {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+}
+
+
+.notes-head span {
+    margin-right: 3px;
+
+    color: #505d65;
+
+    font-size: 12px;
+}
+
+
+.notes-head button {
+    width: 25px;
+    height: 25px;
+
+    border: 1px solid #c8ced3;
+
+    background: #f7f8f9;
+
+    border-radius: 2px;
+
+    color: #5d6970;
+
+    cursor: pointer;
+}
+
+
+.notes-head button:hover {
+    background: #edf2f4;
+}
+
+
+/* =========================================
+   NOTES GRID
+========================================= */
+
+.notes-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    column-gap: 72px;
+
+    row-gap: 14px;
+
+    padding: 5px 20px 18px;
+}
+
+
+.note-field {
+    display: grid;
+
+    grid-template-columns: 135px 1fr;
+
+    gap: 9px;
+
+    align-items: start;
+}
+
+
+.note-field label {
+    padding-top: 8px;
+
+    text-align: right;
+
+    color: #39434a;
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   ACTIVITY
+========================================= */
+
+.activity-header {
+    min-height: 40px;
+
+    padding: 0 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-top: 1px solid #d0d5d8;
+    border-bottom: 1px solid #d0d5d8;
+
+    background: #f8f9fa;
+}
+
+
+.activity-header > div {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+}
+
+
+.activity-header button {
+    width: 25px;
+    height: 25px;
+
+    border: 1px solid #c8ced3;
+
+    background: #ffffff;
+
+    color: #5d6970;
+
+    cursor: pointer;
+}
+
+
+.activity-header strong {
+    color: #3c484f;
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   ACTIVITY ITEM
+========================================= */
+
+.activity-item {
+    padding: 14px 20px 18px;
+
+    border-bottom: 1px solid #d4d9dc;
+}
+
+
+.activity-meta {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+    color: #6c777e;
+
+    font-size: 11px;
+}
+
+
+.activity-meta strong {
+    color: #39434a;
+}
+
+
+.activity-meta .system {
+    color: #237bb5;
+
+    font-weight: 600;
+}
+
+
+.activity-sub {
+    margin-top: 9px;
+
+    color: #4f5b62;
+
+    font-size: 11px;
+}
+
+
+.activity-sub em {
+    color: #8a949a;
+}
+
+
+.activity-message {
+    margin-top: 10px;
+
+    padding: 9px 11px;
+
+    background: #f3f5f6;
+
+    color: #3d484f;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   BOTTOM ACTIONS
+========================================= */
+
+.bottom-actions {
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 9px;
+
+    padding: 16px 20px;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #cfd4d7;
+}
+
+
+.primary-btn {
+    height: 34px;
+
+    padding: 0 17px;
+
+    border: 1px solid #176fae;
+    border-radius: 3px;
+
+    background: #176fae;
+
+    color: #ffffff;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+.primary-btn:hover {
+    background: #125b8e;
+}
+
+
+/* =========================================
+   TOAST
+========================================= */
+
+.toast {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    padding: 11px 16px;
+
+    border-radius: 4px;
+
+    background: #26343d;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.2);
+
+    opacity: 0;
+
+    transform: translateY(15px);
+
+    pointer-events: none;
+
+    transition: 0.25s;
+
+    z-index: 9999;
+}
+
+
+.toast.show {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+    .page {
+        width: calc(100% - 20px);
+    }
+
+    .form-grid {
+        column-gap: 25px;
+    }
+
+    .notes-head,
+    .notes-grid {
+        column-gap: 25px;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .topbar {
+        padding: 0 12px;
+    }
+
+    .top-actions .icon-btn {
+        display: none;
+    }
+
+    .page {
+        width: 100%;
+
+        margin: 0;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .field,
+    .field.full {
+        grid-column: auto;
+
+        grid-template-columns: 120px 1fr;
+    }
+
+    .notes-head,
+    .notes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .note-field {
+        grid-template-columns: 120px 1fr;
+    }
+
+}
+
+
+@media (max-width: 520px) {
+
+    .normal-btn {
+        padding: 0 9px;
+    }
+
+    .page-title {
+        font-size: 12px;
+    }
+
+    .field,
+    .field.full,
+    .note-field {
+        grid-template-columns: 1fr;
+    }
+
+    .field label,
+    .note-field label {
+        text-align: left;
+
+        padding-top: 0;
+    }
+
+}

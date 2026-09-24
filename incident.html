@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incident - INC0011211</title>
+    <link rel="stylesheet" href="css/incident.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- TOP BAR -->
+
+    <header class="topbar">
+
+        <div class="top-left">
+
+            <button class="back-btn" id="backBtn">‹</button>
+
+            <button class="menu-btn">☰</button>
+
+            <span class="page-title">
+                Incident -
+                <strong>INC0011211</strong>
+            </span>
+
+            <span class="pin">⌕</span>
+
+        </div>
+
+
+        <div class="top-actions">
+
+            <button>📎</button>
+            <button>?</button>
+            <button>✉</button>
+            <button>↗</button>
+            <button>⚙</button>
+
+            <button
+                class="action-btn"
+                id="updateBtn"
+            >
+                Update
+            </button>
+
+            <button
+                class="action-btn"
+                id="resolveBtn"
+            >
+                Resolve Incident
+            </button>
+
+            <button
+                class="action-btn delete"
+                id="deleteBtn"
+            >
+                Delete
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- MAIN -->
+
+    <main class="page">
+
+
+        <!-- INCIDENT FORM -->
+
+        <section class="form-section">
+
+            <div class="form-grid">
+
+
+                <!-- NUMBER -->
+
+                <div class="field">
+                    <label>Number</label>
+
+                    <input
+                        value="INC0011211"
+                        readonly
+                    >
+                </div>
+
+
+                <!-- OPENED -->
+
+                <div class="field">
+
+                    <label>Opened</label>
+
+                    <div class="input-icon">
+
+                        <input
+                            value="2015-07-07 12:02:19"
+                        >
+
+                        <span>▣</span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CALLER -->
+
+                <div class="field">
+
+                    <label>Caller</label>
+
+                    <div class="input-icon">
+
+                        <input
+                            value="Enterprise Manager Connector"
+                        >
+
+                        <span>⌕</span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- OPENED BY -->
+
+                <div class="field">
+
+                    <label>Opened by</label>
+
+                    <div class="input-icon">
+
+                        <input
+                            value="System Administrator"
+                        >
+
+                        <span>⌕</span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- LOCATION -->
+
+                <div class="field">
+
+                    <label>Location</label>
+
+                    <div class="input-icon">
+
+                        <input value="Grand Rapids">
+
+                        <span>⌕</span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CONTACT TYPE -->
+
+                <div class="field">
+
+                    <label>Contact type</label>
+
+                    <select>
+
+                        <option>Phone</option>
+                        <option>Email</option>
+                        <option>Self-service</option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- CATEGORY -->
+
+                <div class="field">
+
+                    <label>Category</label>
+
+                    <select>
+
+                        <option>EM Incident</option>
+                        <option>Hardware</option>
+                        <option>Software</option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- STATE -->
+
+                <div class="field">
+
+                    <label>State</label>
+
+                    <select id="state">
+
+                        <option>Open</option>
+                        <option>In Progress</option>
+                        <option>On Hold</option>
+                        <option>Resolved</option>
+                        <option>Closed</option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- SUBCATEGORY -->
+
+                <div class="field">
+
+                    <label>Subcategory</label>
+
+                    <select>
+
+                        <option>-- None --</option>
+                        <option>CPU</option>
+                        <option>Memory</option>
+                        <option>Disk</option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- ASSIGNMENT GROUP -->
+
+                <div class="field">
+
+                    <label>Assignment group</label>
+
+                    <div class="input-icon">
+
+                        <input value="EMSampleGroup">
+
+                        <span>⌕</span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CONFIGURATION -->
+
+                <div class="field">
+
+                    <label>Configuration item</label>
+
+                    <div class="input-icon">
+
+                        <input>
+
+                        <span>⌕</span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ASSIGNED TO -->
+
+                <div class="field">
+
+                    <label>Assigned to</label>
+
+                    <div class="input-icon">
+
+                        <input>
+
+                        <span>⌕</span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- IMPACT -->
+
+                <div class="field">
+
+                    <label>Impact</label>
+
+                    <select>
+
+                        <option>1 - Critical</option>
+                        <option>2 - High</option>
+                        <option>3 - Medium</option>
+                        <option>4 - Low</option>
+
+                    </select>
+
+                </div>
+
+
+                <div></div>
+
+
+                <!-- URGENCY -->
+
+                <div class="field">
+
+                    <label>Urgency</label>
+
+                    <select>
+
+                        <option>1 - Critical</option>
+                        <option>2 - High</option>
+                        <option>3 - Medium</option>
+                        <option>4 - Low</option>
+
+                    </select>
+
+                </div>
+
+
+                <div></div>
+
+
+                <!-- PRIORITY -->
+
+                <div class="field">
+
+                    <label>Priority</label>
+
+                    <select>
+
+                        <option>1 - Critical</option>
+                        <option>2 - High</option>
+                        <option>3 - Medium</option>
+                        <option>4 - Low</option>
+
+                    </select>
+
+                </div>
+
+
+                <div></div>
+
+
+                <!-- SHORT DESCRIPTION -->
+
+                <div class="field full">
+
+                    <label>Short description</label>
+
+                    <div class="description-box">
+
+                        <input
+                            id="description"
+                            value="CPU Utilization for 1 is 19.409%, crossed warning (1) or critical (0) threshold."
+                        >
+
+                        <button>♧</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="related-btn"
+                id="relatedBtn"
+            >
+
+                Related Search Results
+
+                <span>›</span>
+
+            </button>
+
+        </section>
+
+
+        <!-- NOTES -->
+
+        <section class="notes-section">
+
+
+            <div class="section-header">
+
+                <h2>Notes</h2>
+
+                <button
+                    id="collapseBtn"
+                    class="collapse-btn"
+                >
+                    ⌄
+                </button>
+
+            </div>
+
+
+            <div id="notesContent">
+
+
+                <!-- WATCH LIST -->
+
+                <div class="notes-head">
+
+                    <div>
+
+                        <span>
+                            Watch list
+                        </span>
+
+                        <button>♙</button>
+                        <button>♧</button>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Work notes list
+                        </span>
+
+                        <button>♙</button>
+                        <button>♧</button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- NOTES -->
+
+                <div class="notes-grid">
+
+
+                    <div class="note-field">
+
+                        <label>
+                            Additional comments
+                            (Customer visible)
+                        </label>
+
+                        <textarea
+                            id="comments"
+                        ></textarea>
+
+                    </div>
+
+
+                    <div></div>
+
+
+                    <div class="note-field">
+
+                        <label>
+                            Work notes
+                        </label>
+
+                        <textarea
+                            id="workNotes"
+                        ></textarea>
+
+                    </div>
+
+
+                    <div></div>
+
+                </div>
+
+
+                <!-- ACTIVITY -->
+
+                <div class="activity-header">
+
+                    <div>
+
+                        <button>−</button>
+
+                        <strong>
+                            Activity
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <button>−</button>
+                        <button>▽</button>
+                        <button>⌄</button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ACTIVITY ITEM -->
+
+                <div class="activity-item">
+
+                    <div class="activity-meta">
+
+                        <strong>
+                            2015-07-07 12:02:19
+                        </strong>
+
+                        <span class="system">
+                            System Administrator
+                        </span>
+
+                        <span>
+                            Changes: Assigned to,
+                            Additional comments,
+                            impact, incident state,
+                            Opened by, Priority
+                        </span>
+
+                    </div>
+
+
+                    <div class="activity-sub">
+
+                        Assigned to:
+                        <em>(Empty)</em>
+
+                    </div>
+
+
+                    <div class="activity-message">
+
+                        CPU Utilization for 1 is
+                        19.409%, crossed warning (1)
+                        or critical (0) threshold.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- TOAST -->
+
+<div
+    id="toast"
+    class="toast"
+></div>
+
+
+<script src="js/incident.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Desk | Changes</title>
+    <link rel="stylesheet" href="css/changes.css">
+</head>
+<body>
+<div class="app">
+    <aside class="sidebar" id="sidebar">
+        <div class="brand"><div class="logo">SD</div><div><strong>Service Desk</strong><span>Management Portal</span></div></div>
+        <nav>
+            <div class="nav-label">MAIN</div>
+            <a href="dashboard.html" class="nav-item"><span>▦</span>Dashboard</a>
+            <div class="nav-label">SERVICE MANAGEMENT</div>
+            <a href="incidents.html" class="nav-item"><span>⚠</span>Incidents</a>
+            <a href="service-requests.html" class="nav-item"><span>▣</span>Service Requests</a>
+            <a href="problems.html" class="nav-item"><span>◉</span>Problems</a>
+            <a href="changes.html" class="nav-item active"><span>⇄</span>Changes</a>
+            <div class="nav-label">RESOURCES</div>
+            <a href="knowledge-base.html" class="nav-item"><span>▤</span>Knowledge Base</a>
+            <a href="users.html" class="nav-item"><span>◌</span>Users</a>
+            <a href="reports.html" class="nav-item"><span>▥</span>Reports</a>
+        </nav>
+        <div class="sidebar-bottom">
+            <a href="settings.html" class="nav-item"><span>⚙</span>Settings</a>
+            <button id="logoutBtn"><span>↪</span>Logout</button>
+        </div>
+    </aside>
+    <main class="main">
+        <header class="header">
+            <div class="header-left">
+                <button class="mobile-menu" id="mobileMenu">☰</button>
+                <div><h1>Changes</h1><p>Manage change requests and approvals</p></div>
+            </div>
+            <div class="header-right">
+                <button class="notification">🔔<i></i></button>
+                <div class="profile"><div class="avatar">A</div><div><strong id="profileName">Admin</strong><span>Administrator</span></div></div>
+            </div>
+        </header>
+        <div class="content">
+            <div class="page-header">
+                <div><h2>All Changes</h2><p><span id="totalCount">0</span> changes found</p></div>
+                <button class="create-btn" id="createBtn"><span>+</span>Create Change</button>
+            </div>
+            <section class="filter-bar">
+                <div class="search"><span>⌕</span><input type="text" id="searchInput" placeholder="Search changes..."></div>
+                <select id="statusFilter"><option value="all">All Status</option><option value="draft">Draft</option><option value="assessment">Assessment</option><option value="approval">Approval</option><option value="scheduled">Scheduled</option><option value="implementation">Implementation</option><option value="completed">Completed</option><option value="cancelled">Cancelled</option></select>
+                <select id="typeFilter"><option value="all">All Types</option><option value="Standard">Standard</option><option value="Normal">Normal</option><option value="Emergency">Emergency</option></select>
+                <button class="filter-btn" id="clearFilters">Clear</button>
+            </section>
+            <section class="table-panel">
+                <div class="table-top"><span>Showing <strong id="resultCount">0</strong> changes</span></div>
+                <div class="table-wrapper">
+                    <table>
+                        <thead><tr><th><input type="checkbox" id="selectAll"></th><th>Number</th><th>Description</th><th>Type</th><th>Risk</th><th>Priority</th><th>Status</th><th>Requested By</th><th>Planned Date</th><th>Actions</th></tr></thead>
+                        <tbody id="changeTable"></tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+</div>
+
+<div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+        <div class="modal-header"><h3 id="modalTitle">Create Change</h3><button class="modal-close" id="modalClose">✕</button></div>
+        <form id="changeForm">
+            <div class="modal-body">
+                <div class="form-row"><label>Number</label><input id="chgNumber" readonly class="readonly"></div>
+                <div class="form-row"><label>Description <span>*</span></label><input id="chgDesc" type="text" placeholder="Change description" required></div>
+                <div class="form-row"><label>Change Type</label><select id="chgType"><option>Standard</option><option>Normal</option><option>Emergency</option></select></div>
+                <div class="form-row"><label>Risk</label><select id="chgRisk"><option value="low">Low</option><option value="medium" selected>Medium</option><option value="high">High</option></select></div>
+                <div class="form-row"><label>Priority</label><select id="chgPriority"><option value="critical">Critical</option><option value="high">High</option><option value="medium" selected>Medium</option><option value="low">Low</option></select></div>
+                <div class="form-row"><label>Status</label><select id="chgStatus"><option value="draft">Draft</option><option value="assessment">Assessment</option><option value="approval">Approval</option><option value="scheduled">Scheduled</option></select></div>
+                <div class="form-row"><label>Requested By</label><input id="chgBy" placeholder="Enter name"></div>
+                <div class="form-row"><label>Assigned Group</label><input id="chgGroup" value="Service Desk"></div>
+                <div class="form-row"><label>Planned Date</label><input id="chgDate" type="date"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-cancel" id="modalCancelBtn">Cancel</button>
+                <button type="submit" class="btn-primary" id="modalSubmitBtn">Create Change</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="toast" class="toast"></div>
+<script src="js/changes.js"></script>
+</body>
+</html>
