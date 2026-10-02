@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Desk | Ticket Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-logo">
+            <div class="logo-box">SD</div>
+            <div class="logo-text">
+                <strong>Service Desk</strong>
+                <span>Self-Service Portal</span>
+            </div>
+        </div>
+        <nav class="navigation">
+            <div class="nav-section">MAIN</div>
+            <a href="dashboard.html" class="nav-item">
+                <span class="nav-icon">▦</span><span>Dashboard</span>
+            </a>
+            <div class="nav-section">SUPPORT</div>
+            <a href="report.html" class="nav-item">
+                <span class="nav-icon">⚠</span><span>Report Incident</span>
+            </a>
+            <a href="my-tickets.html" class="nav-item active">
+                <span class="nav-icon">▣</span><span>My Tickets</span>
+            </a>
+        </nav>
+        <div class="sidebar-bottom">
+            <a href="../index.html" class="nav-item">
+                <span class="nav-icon">⌂</span><span>Staff Portal</span>
+            </a>
+            <button class="logout-btn" id="logoutBtn">
+                <span>↪</span><span>Logout</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- ================= MAIN ================= -->
+    <main class="main">
+
+        <header class="header">
+            <div class="header-left">
+                <button class="mobile-menu" id="mobileMenu">☰</button>
+                <div>
+                    <h1>Ticket <span id="titleNumber"></span></h1>
+                    <p id="titleDesc"></p>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="profile">
+                    <div class="avatar" id="avatar">U</div>
+                    <div class="profile-info">
+                        <strong id="profileName"></strong>
+                        <span>Employee</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="content">
+
+            <div class="page-intro">
+                <div>
+                    <h2>Ticket Details</h2>
+                    <p>Current status and conversation with the service desk</p>
+                </div>
+                <span class="status" id="headerStatus" style="font-size:11px;padding:6px 10px;"></span>
+            </div>
+
+            <div class="dashboard-grid" style="grid-template-columns:1fr;">
+                <div class="detail-grid">
+
+                    <div class="detail-item full">
+                        <label>Short description</label>
+                        <strong id="dDescription"></strong>
+                    </div>
+
+                    <div class="detail-item">
+                        <label>Ticket number</label>
+                        <strong id="dNumber"></strong>
+                    </div>
+
+                    <div class="detail-item">
+                        <label>Status</label>
+                        <strong><span class="status" id="dStatus"></span></strong>
+                    </div>
+
+                    <div class="detail-item">
+                        <label>Opened</label>
+                        <strong id="dOpened"></strong>
+                    </div>
+
+                    <div class="detail-item">
+                        <label>Category</label>
+                        <strong id="dCategory"></strong>
+                    </div>
+
+                    <div class="detail-item">
+                        <label>Subcategory</label>
+                        <strong id="dSubcategory"></strong>
+                    </div>
+
+                    <div class="detail-item">
+                        <label>Priority</label>
+                        <strong><span class="priority" id="dPriority"></span></strong>
+                    </div>
+
+                    <div class="detail-item full">
+                        <label>Details</label>
+                        <strong id="dDetails"></strong>
+                    </div>
+
+                    <div class="detail-item full">
+                        <label>Reported by / Contact</label>
+                        <strong id="dContact"></strong>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- COMMENT / CONVERSATION -->
+            <div class="panel" style="margin-top:20px;">
+                <div class="panel-header">
+                    <div>
+                        <h3>Conversation</h3>
+                        <p>Messages between you and the service desk</p>
+                    </div>
+                </div>
+                <div id="commentsArea" style="padding:6px 18px 12px;"></div>
+
+                <div class="comment-box" style="border:none;border-top:1px solid #e7ebed;border-radius:0;">
+                    <h3>Add a reply</h3>
+                    <textarea id="newComment" placeholder="Type a message for the service desk..."></textarea>
+                    <div style="display:flex;justify-content:flex-end;margin-top:12px;">
+                        <button class="primary-btn" id="sendComment">Send Reply</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script src="js/common.js"></script>
+<script src="js/ticket.js"></script>
+</body>
+</html>

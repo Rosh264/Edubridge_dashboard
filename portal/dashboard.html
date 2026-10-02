@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Desk | My Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-logo">
+            <div class="logo-box">SD</div>
+            <div class="logo-text">
+                <strong>Service Desk</strong>
+                <span>Self-Service Portal</span>
+            </div>
+        </div>
+
+        <nav class="navigation">
+            <div class="nav-section">MAIN</div>
+            <a href="dashboard.html" class="nav-item active">
+                <span class="nav-icon">▦</span><span>Dashboard</span>
+            </a>
+
+            <div class="nav-section">SUPPORT</div>
+            <a href="report.html" class="nav-item">
+                <span class="nav-icon">⚠</span><span>Report Incident</span>
+            </a>
+            <a href="my-tickets.html" class="nav-item">
+                <span class="nav-icon">▣</span><span>My Tickets</span>
+                <span class="nav-count" id="navTicketCount">0</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="../index.html" class="nav-item">
+                <span class="nav-icon">⌂</span><span>Staff Portal</span>
+            </a>
+            <button class="logout-btn" id="logoutBtn">
+                <span>↪</span><span>Logout</span>
+            </button>
+        </div>
+
+    </aside>
+
+    <!-- ================= MAIN ================= -->
+    <main class="main">
+
+        <header class="header">
+            <div class="header-left">
+                <button class="mobile-menu" id="mobileMenu">☰</button>
+                <div>
+                    <h1>Dashboard</h1>
+                    <p>Welcome back, <strong id="userName"></strong></p>
+                </div>
+            </div>
+            <div class="header-right">
+                <button class="notification-btn">🔔<span class="notification-dot"></span></button>
+                <div class="profile">
+                    <div class="avatar" id="avatar">U</div>
+                    <div class="profile-info">
+                        <strong id="profileName"></strong>
+                        <span>Employee</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="content">
+
+            <div class="page-intro">
+                <div>
+                    <h2>My Support Overview</h2>
+                    <p>Track your reported incidents and their progress.</p>
+                </div>
+                <button class="create-btn" id="reportBtn">
+                    <span>+</span>Report Incident
+                </button>
+            </div>
+
+            <!-- ================= STAT CARDS ================= -->
+            <section class="stats">
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <span class="stat-label">Open Tickets</span>
+                        <strong id="statOpen">0</strong>
+                        <small>Awaiting resolution</small>
+                    </div>
+                    <div class="stat-icon blue">⚠</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <span class="stat-label">In Progress</span>
+                        <strong id="statProgress">0</strong>
+                        <small>Being worked on</small>
+                    </div>
+                    <div class="stat-icon orange">◔</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <span class="stat-label">Resolved</span>
+                        <strong id="statResolved">0</strong>
+                        <small>Solved by service desk</small>
+                    </div>
+                    <div class="stat-icon green">✓</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <span class="stat-label">Total Requests</span>
+                        <strong id="statTotal">0</strong>
+                        <small>All time</small>
+                    </div>
+                    <div class="stat-icon red">≡</div>
+                </div>
+            </section>
+
+            <!-- ================= LOWER GRID ================= -->
+            <section class="dashboard-grid">
+
+                <!-- RECENT TICKETS -->
+                <div class="panel">
+                    <div class="panel-header">
+                        <div>
+                            <h3>Recent Tickets</h3>
+                            <p>Your latest support requests</p>
+                        </div>
+                        <a href="my-tickets.html">View all →</a>
+                    </div>
+                    <div class="ticket-list" id="recentTickets"></div>
+                </div>
+
+                <!-- RIGHT COLUMN -->
+                <div class="right-column">
+
+                    <div class="panel">
+                        <div class="panel-header">
+                            <div>
+                                <h3>Quick Actions</h3>
+                                <p>Common self-service options</p>
+                            </div>
+                        </div>
+                        <div class="quick-actions">
+                            <button onclick="window.location.href='report.html'">
+                                <span class="quick-icon blue">⚠</span>
+                                <span><strong>Report Incident</strong><small>Raise a new ticket</small></span>
+                                <b>›</b>
+                            </button>
+                            <button onclick="window.location.href='my-tickets.html'">
+                                <span class="quick-icon green">▣</span>
+                                <span><strong>My Tickets</strong><small>Track your requests</small></span>
+                                <b>›</b>
+                            </button>
+                            <button onclick="window.location.href='report.html'">
+                                <span class="quick-icon purple">✉</span>
+                                <span><strong>Get Help</strong><small>Describe an issue to the desk</small></span>
+                                <b>›</b>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="panel">
+                        <div class="panel-header">
+                            <div><h3>System Status</h3></div>
+                            <span class="operational">● Operational</span>
+                        </div>
+                        <div class="system-item"><span>Self-Service Portal</span><span class="status-dot">●</span></div>
+                        <div class="system-item"><span>Incident Management</span><span class="status-dot">●</span></div>
+                        <div class="system-item"><span>Notification Service</span><span class="status-dot">●</span></div>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script src="js/common.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>

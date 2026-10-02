@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Desk | My Tickets</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-logo">
+            <div class="logo-box">SD</div>
+            <div class="logo-text">
+                <strong>Service Desk</strong>
+                <span>Self-Service Portal</span>
+            </div>
+        </div>
+        <nav class="navigation">
+            <div class="nav-section">MAIN</div>
+            <a href="dashboard.html" class="nav-item">
+                <span class="nav-icon">▦</span><span>Dashboard</span>
+            </a>
+            <div class="nav-section">SUPPORT</div>
+            <a href="report.html" class="nav-item">
+                <span class="nav-icon">⚠</span><span>Report Incident</span>
+            </a>
+            <a href="my-tickets.html" class="nav-item active">
+                <span class="nav-icon">▣</span><span>My Tickets</span>
+                <span class="nav-count" id="navTicketCount">0</span>
+            </a>
+        </nav>
+        <div class="sidebar-bottom">
+            <a href="../index.html" class="nav-item">
+                <span class="nav-icon">⌂</span><span>Staff Portal</span>
+            </a>
+            <button class="logout-btn" id="logoutBtn">
+                <span>↪</span><span>Logout</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- ================= MAIN ================= -->
+    <main class="main">
+
+        <header class="header">
+            <div class="header-left">
+                <button class="mobile-menu" id="mobileMenu">☰</button>
+                <div>
+                    <h1>My Tickets</h1>
+                    <p>Track every incident you have reported</p>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="profile">
+                    <div class="avatar" id="avatar">U</div>
+                    <div class="profile-info">
+                        <strong id="profileName"></strong>
+                        <span>Employee</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="content">
+
+            <div class="page-intro">
+                <div>
+                    <h2>All My Tickets</h2>
+                    <p><span id="totalCount">0</span> tickets found</p>
+                </div>
+                <button class="create-btn" id="reportBtn">
+                    <span>+</span>Report Incident
+                </button>
+            </div>
+
+            <div class="panel">
+                <div class="panel-header">
+                    <div>
+                        <h3>Tickets</h3>
+                        <p>Click a ticket to view details and add comments</p>
+                    </div>
+                    <select id="statusFilter" style="height:32px;border:1px solid #c8ced3;border-radius:3px;padding:0 8px;color:#39434a;font-size:12px;">
+                        <option value="all">All Status</option>
+                        <option value="active">Active</option>
+                        <option value="progress">In Progress</option>
+                        <option value="resolved">Resolved</option>
+                    </select>
+                </div>
+                <div id="ticketList"></div>
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script src="js/common.js"></script>
+<script src="js/my-tickets.js"></script>
+</body>
+</html>

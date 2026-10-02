@@ -18,6 +18,9 @@ const numberInput = document.getElementById("number");
 const descriptionInput = document.getElementById("description");
 const callerInput = document.querySelector('input[value="Enterprise Manager Connector"]') || document.querySelectorAll('input')[2];
 
+// Logged-in staff member (used when posting work notes)
+const username = localStorage.getItem("serviceDeskUser") || "Service Desk";
+
 // ============================
 // TOAST
 // ============================
@@ -162,7 +165,20 @@ document.getElementById("updateBtn").addEventListener("click", () => {
         }
 
         if (document.getElementById("comments")) {
-            incidents[idx].comments = document.getElementById("comments").value;
+            const newComments = document.getElementById("comments").value;
+            const oldComments = incidents[idx].comments || "";
+
+            incidents[idx].comments = newComments;
+
+            if (newComments.trim() && newComments !== oldComments) {
+                incidents[idx].conversation = incidents[idx].conversation || [];
+                incidents[idx].conversation.push({
+                    author: username || "Service Desk",
+                    role: "staff",
+                    text: newComments,
+                    time: new Date().toLocaleString()
+                });
+            }
         }
         if (document.getElementById("workNotes")) {
             incidents[idx].workNotes = document.getElementById("workNotes").value;

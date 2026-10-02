@@ -101,7 +101,7 @@ function loadDashboardData() {
                 <div class="incident-id">${inc.number}</div>
                 <div class="incident-description">
                     <strong>${inc.shortDescription}</strong>
-                    <span>${inc.caller}</span>
+                    <span>${inc.caller}${inc.source === "User Portal" ? ' · <span class="source-badge">SELF-SERVICE</span>' : ""}</span>
                 </div>
                 <span class="priority ${priorityClass}">${priorityLabel}</span>
                 <span class="status ${statusClass}">${statusLabel}</span>
@@ -123,3 +123,44 @@ function loadDashboardData() {
 }
 
 loadDashboardData();
+
+// ============================
+// LIVE SYNC (cross-tab)
+// ============================
+
+const toast = document.getElementById("toast");
+const notifDot = document.querySelector(".notification-dot");
+
+function newestNumber() {
+    const store = JSON.parse(localStorage.getItem("serviceDeskIncidents")) || [];
+    return store.length ? store[0].number : "none";
+}
+
+let lastNewest = newestNumber();
+
+function showToast(message, isNew) {
+    if (!toast) return;
+    toast.textContent = message;
+    toast.classList.toggle("new", !!isNew);
+    toast.classList.add("show");
+    clearTimeout(window.adminToastTimer);
+    window.adminToastTimer = setTimeout(() => {
+        toast.classList.remove("show");
+    }, 3000);
+}
+
+window.addEventListener("storage", (event) => {
+    if (event.key !== "serviceDeskIncidents") return;
+
+    const fresh = JSON.parse(localStorage.getItem("serviceDeskIncidents")) || [];
+    const current = fresh.length ? fresh[0].number : "none";
+
+    // Flash notification + toast only when a brand-new ticket arrives
+    if (current !== "none" && current !== lastNewest) {
+        if (notifDot) notifDot.style.display = "block";
+        showToast("New incident reported by a user. Check Incidents.", true);
+    }
+
+    lastNewest = current;
+    loadDashboardData();
+});

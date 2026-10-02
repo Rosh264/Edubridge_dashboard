@@ -66,11 +66,17 @@ const state =
 const shortDescription =
     document.getElementById("shortDescription");
 
+const errorMessage =
+    document.getElementById("errorMessage");
+
 const comments =
     document.getElementById("comments");
 
 const workNotes =
     document.getElementById("workNotes");
+
+const troubleshooting =
+    document.getElementById("troubleshooting");
 
 const opened =
     document.getElementById("opened");
@@ -205,7 +211,8 @@ category.addEventListener(
             Hardware: [
                 "CPU",
                 "Memory",
-                "Disk"
+                "Disk",
+                "Boot / OS startup"
             ],
 
             Software: [
@@ -567,6 +574,9 @@ form.addEventListener(
             shortDescription:
                 shortDescription.value.trim(),
 
+            errorMessage:
+                errorMessage.value.trim(),
+
             description:
                 comments.value.trim(),
 
@@ -575,6 +585,9 @@ form.addEventListener(
 
             workNotes:
                 workNotes.value.trim(),
+
+            troubleshooting:
+                troubleshooting.value.trim(),
 
             openedBy:
                 username,

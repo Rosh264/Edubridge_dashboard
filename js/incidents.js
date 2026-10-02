@@ -208,7 +208,7 @@ function initializeIncidents() {
     return merged;
 }
 
-const allIncidents = initializeIncidents();
+let allIncidents = initializeIncidents();
 
 // ============================
 // RENDER TABLE
@@ -259,6 +259,7 @@ function renderTable(incidents) {
                 <div class="description">
                     <strong>${inc.shortDescription}</strong>
                     <span>${inc.category}</span>
+                    ${inc.source === "User Portal" ? '<span class="source-badge">SELF-SERVICE</span>' : ""}
                 </div>
             </td>
             <td>${inc.caller}</td>
@@ -356,4 +357,16 @@ document.getElementById("selectAll").addEventListener("change", function () {
 
 document.getElementById("createBtn").addEventListener("click", () => {
     window.location.href = "create-incident.html";
+});
+
+// ============================
+// LIVE SYNC (cross-tab)
+// ============================
+
+window.addEventListener("storage", (event) => {
+    if (event.key !== "serviceDeskIncidents") return;
+
+    allIncidents = JSON.parse(localStorage.getItem("serviceDeskIncidents")) || [];
+    renderTable(allIncidents);
+    filterIncidents();
 });

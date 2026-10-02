@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Desk | Report Incident</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-logo">
+            <div class="logo-box">SD</div>
+            <div class="logo-text">
+                <strong>Service Desk</strong>
+                <span>Self-Service Portal</span>
+            </div>
+        </div>
+        <nav class="navigation">
+            <div class="nav-section">MAIN</div>
+            <a href="dashboard.html" class="nav-item">
+                <span class="nav-icon">▦</span><span>Dashboard</span>
+            </a>
+            <div class="nav-section">SUPPORT</div>
+            <a href="report.html" class="nav-item active">
+                <span class="nav-icon">⚠</span><span>Report Incident</span>
+            </a>
+            <a href="my-tickets.html" class="nav-item">
+                <span class="nav-icon">▣</span><span>My Tickets</span>
+            </a>
+        </nav>
+        <div class="sidebar-bottom">
+            <a href="../index.html" class="nav-item">
+                <span class="nav-icon">⌂</span><span>Staff Portal</span>
+            </a>
+            <button class="logout-btn" id="logoutBtn">
+                <span>↪</span><span>Logout</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- ================= MAIN ================= -->
+    <main class="main">
+
+        <header class="header">
+            <div class="header-left">
+                <button class="mobile-menu" id="mobileMenu">☰</button>
+                <div>
+                    <h1>Report Incident</h1>
+                    <p>Describe what went wrong and we will take it from there</p>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="profile">
+                    <div class="avatar" id="avatar">U</div>
+                    <div class="profile-info">
+                        <strong id="profileName"></strong>
+                        <span>Employee</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="content">
+
+            <div class="page-intro">
+                <div>
+                    <h2>New Incident Request</h2>
+                    <p>
+                        This will be sent straight to the service desk.
+                        You can track progress under <a href="my-tickets.html">My Tickets</a>.
+                    </p>
+                </div>
+            </div>
+
+            <form id="reportForm" class="form-card">
+
+                <div class="card-header">
+                    <h3>Incident Information</h3>
+                    <p>Fields marked with * are required</p>
+                </div>
+
+                <div class="form-body">
+
+                    <div class="form-section-title">Ticket Details</div>
+
+                    <div class="form-row">
+                        <label>Ticket number</label>
+                        <input id="number" readonly>
+                    </div>
+
+                    <div class="form-row">
+                        <label>Opened</label>
+                        <input id="opened" readonly>
+                    </div>
+
+                    <div class="form-row">
+                        <label>Reported by</label>
+                        <input id="openedBy" readonly>
+                    </div>
+
+                    <div class="form-row">
+                        <label>Category <span>*</span></label>
+                        <select id="category" required>
+                            <option value="">-- Select --</option>
+                            <option>Hardware</option>
+                            <option>Software</option>
+                            <option>Network</option>
+                            <option>Database</option>
+                            <option>Application</option>
+                            <option>Account & Access</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <label>Subcategory</label>
+                        <select id="subcategory">
+                            <option>-- None --</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <label>Priority</label>
+                        <select id="priority">
+                            <option value="medium">3 - Medium</option>
+                            <option value="high">2 - High</option>
+                            <option value="critical">1 - Critical</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <label>Location</label>
+                        <input id="location" placeholder="Optional, e.g. Bangalore Office">
+                    </div>
+
+                    <div class="form-row">
+                        <label>Short description <span>*</span></label>
+                        <input id="shortDescription" placeholder="One line summary of the problem" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label>Details</label>
+                        <textarea id="description" placeholder="Explain what happened, what you were doing, and any error messages"></textarea>
+                    </div>
+
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="secondary-btn" id="cancelBtn">Cancel</button>
+                    <button type="submit" class="primary-btn">Submit Incident</button>
+                </div>
+
+            </form>
+
+        </div>
+
+    </main>
+
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script src="js/common.js"></script>
+<script src="js/report.js"></script>
+</body>
+</html>

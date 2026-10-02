@@ -69,7 +69,7 @@ loginForm.addEventListener("submit", (event) => {
     // DEMO LOGIN
 
     if (
-        username === "admin_rosh" &&
+        username === "Roshan Sharma" &&
         password === "rosh_admin"
     ) {
 
